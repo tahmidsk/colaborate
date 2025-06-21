@@ -1,2 +1,2 @@
 # collaborate
-This is a demo repo to colaborate (study purpose)
+This is a demo repo to collaborate (study purpose)
