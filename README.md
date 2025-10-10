@@ -1,6 +1,8 @@
 # Collaborate - Viral Genome BLAST Analysis
 This is a demo repository for running BLAST on command line for Chikungunya and Zika virus genome sequences.
 
+> **👋 New here?** Start with [START_HERE.md](START_HERE.md) for a guided introduction!
+
 ## Overview
 This repository contains:
 - 4 Chikungunya virus genome sequences
