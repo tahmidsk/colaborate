@@ -24,7 +24,8 @@ wheels/
 *.egg
 
 # Data files (users will provide their own)
-data/
+data/*
+!data/.gitkeep
 *.fasta
 *.fastq
 *.bam
@@ -35,7 +36,8 @@ data/
 *.gff
 
 # Results
-results/
+results/*
+!results/.gitkeep
 
 # IDE
 .vscode/
