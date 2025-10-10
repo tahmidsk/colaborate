@@ -1,0 +1,17 @@
+# Directory structure for genome analysis
+#
+# Place your genome sequence files in the following directories:
+#
+# ./data/chikungunya/
+#   - chikv_1.fasta (Chikungunya virus genome sequence 1)
+#   - chikv_2.fasta (Chikungunya virus genome sequence 2)
+#   - chikv_3.fasta (Chikungunya virus genome sequence 3)
+#   - chikv_4.fasta (Chikungunya virus genome sequence 4)
+#   - reference.fasta (Optional: reference genome)
+#
+# ./data/zika/
+#   - zikv_s22.fasta (Zika virus S-22 genome sequence)
+#
+# Results will be saved in:
+# ./results/chikungunya/
+# ./results/zika/
