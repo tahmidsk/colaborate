@@ -1,0 +1,21 @@
+# BLAST Database files
+blast_db/
+
+# BLAST Results
+blast_results/
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
