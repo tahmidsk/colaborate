@@ -5,6 +5,7 @@ This script shows the basic workflow without requiring NCBI access
 """
 
 import os
+import random
 from datetime import datetime
 
 
@@ -12,7 +13,6 @@ def create_example_sequence(strain, country, year, accession, length=11825):
     """Create an example CHIKV genome sequence."""
     # Generate a dummy sequence of specified length
     # Using a realistic nucleotide distribution
-    import random
     nucleotides = ['A', 'T', 'G', 'C']
     # CHIKV genome has roughly 29% A, 24% T, 24% G, 23% C
     weights = [29, 24, 24, 23]

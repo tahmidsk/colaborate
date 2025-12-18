@@ -149,7 +149,7 @@ echo ""
 print_info "Starting genome collection..."
 echo ""
 
-if $PYTHON_CMD; then
+if eval "$PYTHON_CMD"; then
     echo ""
     print_info "Collection completed successfully!"
     echo ""

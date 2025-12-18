@@ -28,7 +28,8 @@ except ImportError:
 
 
 # Configure your email for NCBI Entrez (required by NCBI)
-Entrez.email = "your.email@example.com"  # Replace with your email
+# This will be set properly in the __init__ method
+Entrez.email = None
 
 
 class CHIKVGenomeCollector:
@@ -57,6 +58,13 @@ class CHIKVGenomeCollector:
         """Initialize the collector with optional email for NCBI."""
         if email:
             Entrez.email = email
+        
+        # Validate that email is set
+        if not Entrez.email or Entrez.email == "your.email@example.com":
+            print("Warning: No valid email provided for NCBI.")
+            print("NCBI requires an email address for API usage.")
+            print("Please provide one using --email option or set it in the script.")
+            print("Using placeholder email may result in API restrictions.")
     
     def search_chikv_genomes(self, max_results: int = 200) -> List[str]:
         """
@@ -78,14 +86,13 @@ class CHIKVGenomeCollector:
         )
         
         try:
-            handle = Entrez.esearch(
+            with Entrez.esearch(
                 db="nucleotide",
                 term=search_query,
                 retmax=max_results,
                 sort="relevance"
-            )
-            record = Entrez.read(handle)
-            handle.close()
+            ) as handle:
+                record = Entrez.read(handle)
             
             id_list = record["IdList"]
             print(f"Found {len(id_list)} sequences")
@@ -115,14 +122,13 @@ class CHIKVGenomeCollector:
             print(f"  Fetching batch {i//batch_size + 1}/{(len(id_list)-1)//batch_size + 1}...")
             
             try:
-                handle = Entrez.efetch(
+                with Entrez.efetch(
                     db="nucleotide",
                     id=batch,
                     rettype="gb",
                     retmode="text"
-                )
-                records = list(SeqIO.parse(handle, "genbank"))
-                handle.close()
+                ) as handle:
+                    records = list(SeqIO.parse(handle, "genbank"))
                 sequences.extend(records)
                 
                 # Be nice to NCBI servers
@@ -320,7 +326,8 @@ class CHIKVGenomeCollector:
                 
                 f.write(f"{i}. {header}\n")
                 f.write(f"   Accession: {record.id}\n")
-                f.write(f"   Description: {record.description[:80]}...\n")
+                description = record.description if len(record.description) <= 80 else record.description[:80] + "..."
+                f.write(f"   Description: {description}\n")
                 f.write(f"   Length: {length} bp\n")
                 f.write(f"   Country: {country}, Year: {year}\n\n")
         
