@@ -40,6 +40,12 @@ Install the following bioinformatics tools before running the pipeline:
 
 ### Installation
 
+**Step-by-Step Installation Guide:**
+
+For complete step-by-step Linux commands with explanations, see:
+- **[Step-by-Step Setup Guide](docs/STEP_BY_STEP_SETUP.md)** - Sequential commands with detailed explanations
+- **[Quick Command List](QUICK_SETUP_COMMANDS.sh)** - All commands in one script
+
 #### Using Conda (Recommended)
 
 ```bash
@@ -402,8 +408,10 @@ For issues or questions:
 ## Documentation
 
 - [README](README.md) - Overview and quick start
+- **[Step-by-Step Setup](docs/STEP_BY_STEP_SETUP.md) - Sequential Linux commands with explanations**
+- **[Quick Commands](QUICK_SETUP_COMMANDS.sh) - All setup commands in one script**
 - [Installation Guide](docs/INSTALLATION.md) - Software installation
-- **[Database Setup](docs/DATABASE_SETUP.md) - Database download codes and setup**
+- [Database Setup](docs/DATABASE_SETUP.md) - Database download codes and setup
 - [Workflow Guide](docs/WORKFLOW.md) - Step-by-step analysis
 - [Methods](docs/METHODS.md) - Scientific methodology
 - [Requirements](docs/REQUIREMENTS.md) - Dependencies
