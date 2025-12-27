@@ -69,18 +69,35 @@ docker pull staphb/prokka
 
 ### Database Setup
 
+**Automated Setup (Recommended):**
+
+```bash
+# Run the automated database setup script
+bash scripts/setup_databases.sh
+```
+
+**Manual Setup:**
+
 ```bash
 # Download and setup ABRicate databases
 abricate-get_db --db resfinder --force
 abricate-get_db --db card --force
 abricate-get_db --db vfdb --force
 
-# Download Kraken database
+# Download Kraken database (choose one option)
+# Option 1: MiniKraken (~8 GB, fastest)
+wget https://genome-idx.s3.amazonaws.com/kraken/minikraken2_v2_8GB_201904.tgz
+tar -xzf minikraken2_v2_8GB_201904.tgz
+
+# Option 2: Standard Kraken (~180 GB, most comprehensive)
 kraken-build --standard --db /path/to/kraken/database
 
 # Update configuration
-# Edit config/pipeline_config.sh and set KRAKEN_DB path
+export KRAKEN_DB="/path/to/kraken/database"
 ```
+
+**For detailed database setup instructions and all download codes, see:**
+- **[Database Setup Guide](docs/DATABASE_SETUP.md)** - Complete database download instructions
 
 ## Quick Start
 
@@ -377,9 +394,20 @@ When using this pipeline, please cite:
 ## Support
 
 For issues or questions:
+- **Database Setup**: See [Database Setup Guide](docs/DATABASE_SETUP.md) for all database download codes
 - Check the documentation in `docs/`
 - Review example outputs in `examples/`
 - Open an issue on GitHub
+
+## Documentation
+
+- [README](README.md) - Overview and quick start
+- [Installation Guide](docs/INSTALLATION.md) - Software installation
+- **[Database Setup](docs/DATABASE_SETUP.md) - Database download codes and setup**
+- [Workflow Guide](docs/WORKFLOW.md) - Step-by-step analysis
+- [Methods](docs/METHODS.md) - Scientific methodology
+- [Requirements](docs/REQUIREMENTS.md) - Dependencies
+- [Quick Reference](docs/QUICK_REFERENCE.md) - Command reference
 
 ## License
 
