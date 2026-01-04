@@ -1,0 +1,12 @@
+SampleID	SampleType	Subject	Description
+Sample_Gut_1	Gut	Fish1	Gut-associated microbiome sample 1
+Sample_Gut_2	Gut	Fish2	Gut-associated microbiome sample 2
+Sample_Gut_3	Gut	Fish3	Gut-associated microbiome sample 3
+Sample_Gut_4	Gut	Fish4	Gut-associated microbiome sample 4
+Sample_Gut_5	Gut	Fish5	Gut-associated microbiome sample 5
+Sample_Derm_1	Derm	Fish1	Dermal-associated microbiome sample 1
+Sample_Derm_2	Derm	Fish2	Dermal-associated microbiome sample 2
+Sample_Derm_3	Derm	Fish3	Dermal-associated microbiome sample 3
+Sample_Derm_4	Derm	Fish4	Dermal-associated microbiome sample 4
+Sample_Derm_5	Derm	Fish5	Dermal-associated microbiome sample 5
+Sample_Derm_6	Derm	Fish6	Dermal-associated microbiome sample 6
