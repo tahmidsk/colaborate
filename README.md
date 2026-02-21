@@ -1,6 +1,6 @@
 # collaborate
 
-16S rRNA Microbiome Analysis Pipeline (Gut vs Derm)
+## 16S rRNA Microbiome Analysis Pipeline (Gut vs Derm)
 
 ## Overview
 

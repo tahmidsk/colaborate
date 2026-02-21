@@ -92,7 +92,7 @@ p_genus <- ggplot(genus_df, aes(x = Sample, y = Abundance, fill = Genus)) +
 save_plot(p_genus, "genus_composition_top15")
 
 ###############################################################################
-# 3.4.4  Genus-Level Statistical Comparison (Top 25)
+# 3.4.4 (cont.)  Genus-Level Statistical Comparison (Top 25)
 ###############################################################################
 top25_genus  <- names(sort(taxa_sums(physeq_genus), decreasing = TRUE))[1:25]
 physeq_gen25 <- prune_taxa(top25_genus, physeq_genus)
